@@ -102,7 +102,7 @@ def delete_file(instance, field_name, file_, using):
                 file_, opts.app_label, opts.model_name, field_name)
         cleanup_post_delete.send(sender=None, file=file_)
 
-    on_commit(run_on_commit, using)
+    on_commit(run_on_commit)
 
 
 def connect():
